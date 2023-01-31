@@ -1,0 +1,29 @@
+﻿@model IEnumerable<apartment>
+
+
+
+
+<div class="apttable">
+
+    <h2>Apartments</h2>
+    <table>
+        <tr>
+            <th>Focus</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Unit</th>
+            <th>Payment</th>
+        </tr>
+        @foreach (var apartment in Model)
+        {
+            <tr>
+                <td><a href=/Admin/ViewApartments/@apartment.id>@apartment.id</a></td>
+                <td>@apartment.id</td>
+                <td>@apartment.name</td>
+                <td>@apartment.unit</td>
+                <td>@apartment.payment</td>
+            </tr>
+        }
+    </table>
+</div>
+

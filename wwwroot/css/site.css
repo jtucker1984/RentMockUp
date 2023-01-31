@@ -4,7 +4,7 @@
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 
@@ -68,4 +68,20 @@ button {
     line-height: 31px;
     color: #000000;
 }
+table {
+    display: table;
+    border-style: solid;
+    border-color: #B2CFCA;
+    width:90%;
+    height:50px;
+}
 
+tr {
+}
+
+th {
+    background-color: #B2CFCA;
+}
+td {
+    text-align:center;
+}

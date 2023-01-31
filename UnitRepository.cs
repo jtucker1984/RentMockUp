@@ -15,7 +15,13 @@ namespace RentMockUp
 
         public IEnumerable<apartment> GetAllApartments()
         {
-            return _conn.Query<apartment>("SELECT * FROM APARTMENT;");
+            return _conn.Query<apartment>("SELECT * FROM apartment;");
+        }
+
+        public apartment GetApartment(int id)
+        {
+           return _conn.QuerySingle<apartment>("SELECT * FROM apartment WHERE ID = @id",
+               new {id = id});
         }
     }
 }

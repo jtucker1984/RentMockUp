@@ -17,10 +17,16 @@ namespace RentMockUp.Controllers
             this.repo = repo;
         }
         // GET: /<controller>/
-        public IActionResult Admin()
+        public IActionResult Apartment()
         {
             var apartments = repo.GetAllApartments();
             return View(apartments);
+        }
+
+        public IActionResult ViewApartments(int id)
+        {
+            var apartment = repo.GetApartment(id);
+            return View(apartment); 
         }
     }
 }
