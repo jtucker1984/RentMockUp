@@ -1,7 +1,27 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using System.Data;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using MySql.Data.MySqlClient;
+using RentMockUp;
+using RentMockUp.Models;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("bestbuy"));
+    conn.Open();
+    return conn;
+
+});
+
+builder.Services.AddTransient<IunitRepository, UnitRepository>();
+
 
 var app = builder.Build();
 
