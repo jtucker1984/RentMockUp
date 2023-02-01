@@ -1,0 +1,20 @@
+﻿@model apartment
+
+<h2>Update @Model.name</h2>
+
+@using(Html.BeginForm("UpdateApartmentToDatabase", "Admin", "Post"))
+    {
+       <form>
+        <fieldset>
+            <legend>Please complete and submit. </legend>
+            <input asp-for="id" type="hidden" value="@Model.id"/>
+            <label asp-for="name" class="control-label">Name</label>
+            <input type="text" name="name" class="form-control" value="@Model.name"/>
+            <label asp-for="unit" class="control-label">Unit</label>
+            <input type="number" name="unit" class="form-control" value="@Model.unit"/>
+            <label asp-for="payment" class="control-label">Payment</label>
+            <input type="number" step="0.01" name="payment" class="form-control" value="@Model.payment"/>
+            <input type="submit" value="UpdateApartment" class="btn-btn-primary"/>
+        </fieldset>
+        </form>
+    }

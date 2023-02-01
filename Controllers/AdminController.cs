@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RentMockUp.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,6 +28,27 @@ namespace RentMockUp.Controllers
         {
             var apartment = repo.GetApartment(id);
             return View(apartment); 
+        }
+
+        public IActionResult UpdateApartment(int id)
+        {
+            apartment apartment = repo.GetApartment(id);
+
+            if (apartment == null)
+            {
+                return View("ApartmentNotFound");
+            }
+
+            return View(apartment);
+
+        }
+
+        public IActionResult UpdateApartmentToDatabase(apartment apartment)
+        {
+            repo.UpdateApartment(apartment);
+
+            return RedirectToAction("ViewApartments", new { id = apartment.id });
+
         }
     }
 }
