@@ -11,7 +11,8 @@
     "RentMockUp": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7254;http://localhost:5090",
+      "launchUrl": "http//localhost:3306;",
+      "applicationUrl": "https://localhost:3306;http://localhost:5090",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
