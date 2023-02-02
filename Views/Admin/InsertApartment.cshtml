@@ -1,0 +1,26 @@
+﻿@model apartment
+<h2>Assign a new Tenant</h2>
+@using(Html.BeginForm("InsertApartmentToDatabase", "Admin", "Post"))
+{
+  <form class="form" id="tenanttable">
+      <fieldset>
+          
+          <input asp-for="id" type="hidden" value=""/>
+
+          <label asp-for="name"class="control-label">Name</label>
+          <input type="text" name="Name" class="form-control" value=""/>
+
+          <label asp-for="unit" class="control-label">Unit Number</label>
+          <input type="text" name="Unit" class="form-control" value=""/>
+
+          <label asp-for="payment" class="control-label">Payment</label>
+          <input type="number" step="0.01" name="Payment" class="form-control"/>
+
+          
+          <input type="submit" value="Create Apartment" class="btn btn-primary"/>
+      </fieldset>
+  </form>
+
+
+}
+

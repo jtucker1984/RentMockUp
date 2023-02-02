@@ -50,6 +50,24 @@ namespace RentMockUp.Controllers
             return RedirectToAction("ViewApartments", new { id = apartment.id });
 
         }
+        public IActionResult InsertApartment()
+        {
+            var apartment = repo.AssignCategory();
+            return View(apartment);
+        }
+
+        public IActionResult InsertApartmentToDatabase(apartment apartmentToInsert)
+        {
+            repo.InsertApartment (apartmentToInsert);
+
+            return RedirectToAction("apartment");
+        }
+        public IActionResult DeleteApartment(apartment apartment)
+        {
+            repo.DeleteApartment(apartment);
+
+            return RedirectToAction("apartment");
+        }
     }
 }
 

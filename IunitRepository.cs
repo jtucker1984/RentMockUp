@@ -8,6 +8,10 @@ namespace RentMockUp
 		public IEnumerable<apartment> GetAllApartments();
 		public apartment GetApartment(int id);
 		public void UpdateApartment(apartment apartment);
+		public void InsertApartment(apartment apartmentToInsert);
+		public IEnumerable<Category> GetCategories();
+		public apartment AssignCategory();
+		public void DeleteApartment(apartment apartment);
 	}
 }
 

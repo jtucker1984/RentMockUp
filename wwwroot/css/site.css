@@ -50,7 +50,7 @@ h3 {
     height: 82px;
     margin-left: 25%;
 }
-button {
+button ,btn btn-primary{
     /* admin button */
 
     
@@ -68,7 +68,7 @@ button {
     line-height: 31px;
     color: #000000;
 }
-table {
+table,.form {
     display: table;
     border-style: solid;
     border-color: #B2CFCA;
@@ -85,3 +85,12 @@ th {
 td {
     text-align:center;
 }
+#tenanttable {
+    border-style: solid;
+    border-color: #B2CFCA;
+    width: 90%;
+    height: 50px;
+}
+.btn btn-primary {
+}
+

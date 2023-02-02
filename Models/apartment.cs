@@ -10,6 +10,7 @@ namespace RentMockUp.Models
 		public string name { get; set; }
 		public int unit { get; set; }
 		public double payment { get; set; }
+		public IEnumerable<Category> Categories { get; set; }
 
 	}
 }
