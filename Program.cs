@@ -14,10 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDbConnection>((s) =>
 {
-    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("rentmock"));
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("rentmock").ToString());
     conn.Open();
     return conn;
-
+        
 });
 
 builder.Services.AddTransient<IunitRepository, UnitRepository>();

@@ -20,7 +20,7 @@
 
 </div>
 <div style="display:block">
-    @using(Html.BeginForm("DeleteApartment", "apartment", "Post"))
+    @using(Html.BeginForm("DeleteApartment", "Apartment", "Post"))
         {
             <input type="hidden" asp-for="id" value="@Model.id"/>
             <input type ="submit" onclick="return confirm('Are you Sure?')" value="Delete this apartment"/>

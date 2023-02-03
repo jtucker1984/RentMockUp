@@ -66,7 +66,7 @@ namespace RentMockUp.Controllers
         {
             repo.DeleteApartment(apartment);
 
-            return RedirectToAction("apartment");
+            return RedirectToAction("Index");
         }
     }
 }
